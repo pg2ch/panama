@@ -1,0 +1,25 @@
+﻿@{
+    Layout = null;
+    string address = !string.IsNullOrEmpty(ViewBag.data.address_fix) ? ViewBag.data.address_fix : ViewBag.data.address;
+}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8"/>
+	<title>パナマップ</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+</head>
+<body>
+	<h2>[@(ViewBag.data.node_id)] @(address)</h2>
+	<ul>
+		<li><a target="_blank" href="https://offshoreleaks.icij.org/nodes/@(ViewBag.data.node_id)">Offshore Leaks Database</a>
+		<li><a target="_blank" href="http://maps.google.com/maps?q=@(address)">Google Maps</a>
+		<li><a target="_blank" href="http://maps.google.com/maps?q=&layer=c&cbll=@(ViewBag.data.google_latlon.X),@(ViewBag.data.google_latlon.Y)">Street View</a>
+	</ul>
+		
+	<div><a href="https://twitter.com/intent/tweet?button_hashtag=PanaMap@(ViewBag.data.node_id)&text=%23PanaMap" class="twitter-hashtag-button" data-size="large" data-related="_monobook">Tweet #PanaMapXXX</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div>
+	<div><a class="twitter-timeline" href="https://twitter.com/hashtag/PanaMap" data-widget-id="733623637324894209">#PanaMap のツイート</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>
+</body>
+</html>
+
+

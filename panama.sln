@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanaMap", "PanaMap\PanaMap.csproj", "{6191B235-854D-4226-BD87-28D57CA6266D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanaMap.Tests", "PanaMap.Tests\PanaMap.Tests.csproj", "{9E48EE64-E534-4C2F-A739-C88E2F728C5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{FA01DB7A-C963-482C-965D-6A679B058EF6}"
+	ProjectSection(SolutionItems) = preProject
+		items\data.sql.7z = items\data.sql.7z
+		items\schema.sql = items\schema.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6191B235-854D-4226-BD87-28D57CA6266D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6191B235-854D-4226-BD87-28D57CA6266D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6191B235-854D-4226-BD87-28D57CA6266D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6191B235-854D-4226-BD87-28D57CA6266D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E48EE64-E534-4C2F-A739-C88E2F728C5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E48EE64-E534-4C2F-A739-C88E2F728C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E48EE64-E534-4C2F-A739-C88E2F728C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E48EE64-E534-4C2F-A739-C88E2F728C5C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
