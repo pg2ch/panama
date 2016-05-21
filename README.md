@@ -10,7 +10,7 @@ OpenStreetMapに、パナマ文書に記載された謎の住所のマーカー�
 * Mono 4.4 (Beta)
 * PostgreSQL 9.5
 
-ASP.NET Web APIが使えるようになったMono 4.4 (beta)を使ってみたかったのMac上のXamarin Studioで開発して、CentOS7上に展開して実行テストしている。LinuxでASP.NETを動かすとファイルシステムが大文字小文字を区別するあたりの調整でイライラすることが判明した。
+Mono 4.4 (beta)からASP.NET Web APIが使えるようになったそうなので、実際に使い物になるか試してみたく、Mac上のXamarin Studioで開発して、CentOS7上に展開して実行テストしている。その結果、LinuxでASP.NETを動かすとファイルシステムが大文字小文字を区別するあたりの調整でイライラすることが判明した。
 
 パナマ文書掲載の住所から経度緯度を取得するのにはGoogle Geocoding APIを使用している。
 この部分はrubyで書いてあるがgemの復元の環境依存が激しいようなのでC#で書きなおしてから公開する。
@@ -24,3 +24,9 @@ mod_monoで動くかは試していないので知らん。
 
     $ cd panama/PamaMac
     $ xsp4 --verbose --port 80
+    
+### 動作サンプル
+一時的にホスティングしているものなので、そのうち消える。
+
+  http://153.120.36.84/
+
