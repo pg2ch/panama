@@ -44,7 +44,7 @@ namespace PanaMap.Controllers
                      }
                 }
 
-                Console.WriteLine(sql);
+                //Console.WriteLine(sql);
                 var rows = con.Query<object>(sql);
                                              
                 return Json<object>(rows);
