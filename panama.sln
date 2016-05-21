@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{FA01DB7A
 	ProjectSection(SolutionItems) = preProject
 		items\data.sql.7z = items\data.sql.7z
 		items\schema.sql = items\schema.sql
+		items\nuget.exe = items\nuget.exe
 	EndProjectSection
 EndProject
 Global
