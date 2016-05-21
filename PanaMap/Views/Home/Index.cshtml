@@ -7,6 +7,13 @@
 	<title>パナマップ</title>
 	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 	<script src="http://openlayers.org/api/OpenLayers.js"></script>
+	<script type="text/javascript">
+		var center = { 
+			lon: @ViewBag.Lon,
+			lat: @ViewBag.Lat,
+			zoom: @ViewBag.Zoom
+		};
+	</script>
 	<script src="/Scripts/panamap.js"></script>
 </head>
 <body>

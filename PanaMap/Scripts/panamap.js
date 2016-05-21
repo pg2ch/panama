@@ -36,9 +36,8 @@
 		map.events.register("moveend" , map, onMapChange);
 
 		// 中心点を日本にする
-		var lonlat = new OpenLayers.LonLat(139.74135441667, 35.658099222222).transform(epsg4326,epsg900913)
-		var zoom = 5;
-		map.setCenter(lonlat,zoom);
+		var lonlat = new OpenLayers.LonLat(center.lon, center.lat).transform(epsg4326,epsg900913)
+		map.setCenter(lonlat, center.zoom);
     }
 
 	function onMapChange() {
@@ -97,6 +96,9 @@
 	    feature.popup = popup;
 	    popup.feature = feature;
 	    map.addPopup(popup);
+
+	    // コピペ用にブラウザのアドレスバーを書き換える
+	    history.replaceState('','','/map/' + data.google_latlon.X + ',' + data.google_latlon.Y + ',' + map.getZoom());
 	}
 				
 	function onFeatureUnselect(evt) {
