@@ -16,8 +16,8 @@ namespace PanaMap.Controllers
     {
         public IHttpActionResult Get(double lat1, double lon1, double lat2, double lon2)
         {
-            int y = 10;
-            int x = 10;
+            int y = 9;
+            int x = 9;
             int limit = 5;
             double h = (lat2 - lat1) / y;
             double w = (lon2 - lon1) / x;
@@ -38,13 +38,13 @@ namespace PanaMap.Controllers
                         var lonA = lon1 + (w * (i + 0));
                         var latB = lat1 + (h * (j + 1));
                         var lonB = lon1 + (w * (i + 1));
-                        sql += "(select node_id, google_latlon from panama_addresses";
+                        sql += "(select node_id, google_latlon, address, address_fix from panama_addresses";
                         sql += " where google_latlon <@ box(point(" + latA + "," + lonA + "),point(" + latB + "," + lonB + "))";
                         sql += " limit " + limit + ")";
                      }
                 }
 
-                //Console.WriteLine(sql);
+                Console.WriteLine(sql);
                 var rows = con.Query<object>(sql);
                                              
                 return Json<object>(rows);

@@ -61,7 +61,7 @@
 					.transform(epsg4326, epsg3857);
 				// マーカー生成
 				var feature = new OpenLayers.Feature.Vector(point, {
-			        tooltip: val.address,
+			        tooltip: val.address_fix || val.address,
 					raw: val
 			    });
 				features.push(feature);
