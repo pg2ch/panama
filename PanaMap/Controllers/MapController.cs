@@ -16,45 +16,38 @@ namespace PanaMap.Controllers
     {
         public IHttpActionResult Get(double lat1, double lon1, double lat2, double lon2)
         {
-            int y = 5;
-            int x = 5;
+            int y = 10;
+            int x = 10;
+            int limit = 5;
             double h = (lat2 - lat1) / y;
             double w = (lon2 - lon1) / x;
 
             using (var con = Model.GetDB())
             {
-                var sql = @"
-                    select 
-                        node_id,
-                        address,
-                        google_latlon,
-                        address_fix
-                    from 
-                        panama_addresses 
-                    where
-                        google_latlon is not null
-                        and google_latlon @ box(point(@Lat1,@Lon1),point(@Lat2,@Lon2))
-                    limit 10
-                ";
-
-                var ret = new List<object>();
-
+                var sql = "";
                 for (int j = 0; j < y; j++)
                 {
-                    for (int i = 0; i < x; i++)
+                    for (int i = 0; i < x; i++) 
                     {
-                        var rows = con.Query<object>(sql, new
+                        if (sql != "")
                         {
-                            Lat1 = lat1 + (h * (j + 0)),
-                            Lon1 = lon1 + (w * (i + 0)),
-                            Lat2 = lat1 + (h * (j + 1)),
-                            Lon2 = lon1 + (w * (i + 1)),
-                        });
-                        ret.AddRange(rows);
-                    }
+                            sql += " union all \n";
+                        }
+
+                        var latA = lat1 + (h * (j + 0));
+                        var lonA = lon1 + (w * (i + 0));
+                        var latB = lat1 + (h * (j + 1));
+                        var lonB = lon1 + (w * (i + 1));
+                        sql += "(select node_id, google_latlon from panama_addresses";
+                        sql += " where google_latlon <@ box(point(" + latA + "," + lonA + "),point(" + latB + "," + lonB + "))";
+                        sql += " limit " + limit + ")";
+                     }
                 }
 
-                return Json<object>(ret);
+                Console.WriteLine(sql);
+                var rows = con.Query<object>(sql);
+                                             
+                return Json<object>(rows);
             }
         }
 

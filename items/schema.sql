@@ -147,7 +147,7 @@ ALTER TABLE ONLY panama_addresses
 --
 
 CREATE INDEX panama_addresses_node_id_idx ON panama_addresses USING btree (node_id);
-
+CREATE INDEX panama_addresses_google_latlon_idx ON panama_addresses USING gist (google_latlon);
 
 --
 -- Name: panama_all_edges_node_1_idx; Type: INDEX; Schema: public; Owner: _postgres
