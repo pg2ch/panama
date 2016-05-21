@@ -85,7 +85,6 @@
 
 	function onPopupClose(evt) {
 	    select.unselect(this.feature);
-	    this.feature = null;
 	}
 	
 	function onFeatureSelect(evt) {
