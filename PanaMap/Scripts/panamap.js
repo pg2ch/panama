@@ -95,7 +95,7 @@
 		        scrollCollapse: true,
 				data: rows,
 				columns: [
-					{ title: "Node ID", data: "node_id"        , width: 40 },
+					{ title: "ID"     , data: "node_id"        , width: 40 },
 					{ title: "Lat"    , data: "google_latlon.X", width: 60 },
 					{ title: "Lon"    , data: "google_latlon.Y", width: 60 },
 					{ title: "Address", data: "address" },
