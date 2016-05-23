@@ -8,7 +8,11 @@
 	  	<meta name="viewport" content="width=320, height=480, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
 			
 		<title>パナマップ｜パナマ文書解析プロジェクト</title>
-			
+		<style>
+			* { font-size:100%; margin:0; padding: 0; line-height:100%; }
+			h1,h2,h3 { font-size:100%; }
+		</style>
+		
 		<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
@@ -25,10 +29,12 @@
 		<script src="/Scripts/panamap.js"></script>
 	</head>
 	<body>
-		<h1>パナマップ</h1>
-		<div><ul><li><a href="https://github.com/pg2ch/panama">ソースコードやSQL化したパナマ文書など</a></li></ul></div>
-		<div style="height:80%">
-		    <div id="map" style="height:80%"></div>
+		<div>
+			<h1>パナマップ</h1>
+			<ul><li><a href="https://github.com/pg2ch/panama">ソースコードやSQL化したパナマ文書など</a></li></ul>
+		</div>
+		<div>
+		    <div id="map" style="height:70%"></div>
 			<table id="table" class="display">
 				<thead>
 			        <tr>

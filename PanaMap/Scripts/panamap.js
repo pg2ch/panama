@@ -12,8 +12,8 @@
 		// The overlay layer for our marker, with a simple diamond as symbol
 		overlay = new OpenLayers.Layer.Vector('Overlay', {
 		  styleMap: new OpenLayers.StyleMap({
-		      externalGraphic: 'http://dev.openlayers.org/img/marker.png',
-		      graphicWidth: 20, graphicHeight: 24, graphicYOffset: -24,
+		      externalGraphic: 'http://monobook.org/images/marker01.png',
+		      graphicWidth: 48, graphicHeight: 68, graphicYOffset: -68,
 		      title: '${tooltip}'
 		  })
 		});

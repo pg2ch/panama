@@ -88,6 +88,7 @@
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
     <Folder Include="Views\node\" />
+    <Folder Include="Content\images\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
@@ -111,6 +112,7 @@
     <Content Include="packages.config" />
     <Content Include="Scripts\panamap.js" />
     <Content Include="Views\node\Index.cshtml" />
+    <Content Include="Content\images\maker01.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
