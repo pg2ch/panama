@@ -3,6 +3,7 @@
 	var overlay;
 	var select;
 	var popup = {};
+	var table = {};
 
 	var epsg3857   = new OpenLayers.Projection("EPSG:3857");
 	var epsg4326   = new OpenLayers.Projection("EPSG:4326");
@@ -38,6 +39,13 @@
 		// 中心点を日本にする
 		var lonlat = new OpenLayers.LonLat(center.lon, center.lat).transform(epsg4326,epsg3857)
 		map.setCenter(lonlat, center.zoom);
+
+		// テーブル初期化
+		table = $('#table').DataTable( {
+		    paging: false,
+		    scrollY: 400,
+		    destroy: true,
+		});
     }
 
 	function onMapChange() {
@@ -80,6 +88,34 @@
 			}
 			overlay.addFeatures(features);
 
+			// テーブル更新
+			table = $('#table').DataTable({
+				destroy: true,
+		        scrollY:        "180px",
+		        scrollCollapse: true,
+				data: rows,
+				columns: [
+					{ title: "Node ID", data: "node_id"        , width: 40 },
+					{ title: "Lat"    , data: "google_latlon.X", width: 60 },
+					{ title: "Lon"    , data: "google_latlon.Y", width: 60 },
+					{ title: "Address", data: "address" },
+				]
+			});
+
+			$('#table tbody').on('click', 'tr', function () {
+				var data = table.row(this).data();
+
+				if (popup.feature != null) {
+						select.unselect(popup.feature);
+				}
+
+				$.each(overlay.features, function(k,v) {
+					if (v.data.raw.node_id == data.node_id) {
+						select.select(v);
+						return false;// $.eachのbreak
+					}
+				});
+			});
 		});
 	}
 
